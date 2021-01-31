@@ -192,7 +192,7 @@ function qa_get_request_content()
 
 	} else {
 		qa_set_template(strlen($firstlower) ? $firstlower : 'qa'); // will be changed later
-		$qa_content = require QA_INCLUDE_DIR . 'pages/default.php'; // handles many other pages, including custom pages and page modules
+		$qa_content = require QA_INCLUDE_DIR . 'pages/question.php'; // handles many other pages, including custom pages and page modules
 	}
 
 	if ($firstlower == 'admin') {

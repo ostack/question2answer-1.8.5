@@ -355,10 +355,12 @@ function qa_db_qs_selectspec($voteuserid, $sort, $start, $categoryslugs = null, 
 		case 'views':
 			$sortsql = 'ORDER BY ^posts.' . $sort . ' DESC, ^posts.created DESC';
 			break;
-
+        
 		case 'created':
 		case 'hotness':
-			$sortsql = 'ORDER BY ^posts.' . $sort . ' DESC';
+			//$sortsql = 'ORDER BY ^posts.' . $sort . ' DESC';
+			//$sortsql = ' ORDER BY RAND() ';
+			$sortsql = ' and ^posts.postid > (SELECT floor( RAND() * ((SELECT MAX(^posts.postid) FROM ^posts)-(SELECT MIN(^posts.postid) FROM ^posts)) + (SELECT MIN(^posts.postid) FROM ^posts)))';
 			break;
 
 		default:
