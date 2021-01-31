@@ -757,4 +757,11 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->output('<input type="text" ' .'placeholder="' . $search['button_label'] . '..." ' . $search['field_tags'] . ' value="' . @$search['value'] . '" class="qa-search-field"/>');
 	}
+	public function q_view_content($q_view) {
+		$this->output('<h3>');
+		$this->output($q_view['title']);
+		$this->output('</h3>');
+		parent::q_view_content($q_view);
+	}
+	
 }
