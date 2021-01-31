@@ -177,8 +177,10 @@ function qa_get_request_content()
 	$requestparts = qa_request_parts();
 	$firstlower = strtolower($requestparts[0]);
 	$routing = qa_page_routing();
-
-	if (isset($routing[$requestlower])) {
+    if(empty($requestlower)){
+		qa_set_template('questions');
+		$qa_content = require QA_INCLUDE_DIR . 'pages/questions.php'; 
+	} elseif(isset($routing[$requestlower])) {
 		qa_set_template($firstlower);
 		$qa_content = require QA_INCLUDE_DIR . $routing[$requestlower];
 
@@ -192,7 +194,7 @@ function qa_get_request_content()
 
 	} else {
 		qa_set_template(strlen($firstlower) ? $firstlower : 'qa'); // will be changed later
-		$qa_content = require QA_INCLUDE_DIR . 'pages/question.php'; // handles many other pages, including custom pages and page modules
+		$qa_content = require QA_INCLUDE_DIR . 'pages/default.php'; // handles many other pages, including custom pages and page modules
 	}
 
 	if ($firstlower == 'admin') {
