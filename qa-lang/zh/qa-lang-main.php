@@ -91,7 +91,7 @@ return array(
     'image_not_read' => "无法读取图片，请重新上传：^",
     'image_too_big_x_pc' => "图片太大，请调整尺寸到 ^% 然后再重试。",
     'in_category_x' => "分类:^ | ",
-    'ip_address_x' => "IP地址 ^",
+    'ip_address_x' => "IP地址 ^ 相关帖子",
     'logged_in_x' => "你好 ^",
     'max_length_x' => "最长 ^ 个字符",
     'max_upload_size_x' => "最大上传：^",

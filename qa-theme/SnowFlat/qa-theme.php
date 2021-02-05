@@ -759,7 +759,7 @@ class qa_html_theme extends qa_html_theme_base
 	}
 	public function q_view_content($q_view) {
 		$this->output('<h3>');
-		$this->output($q_view['title']);
+		$this->output(in_array('title',$q_view)?$q_view['title']:"");
 		$this->output('</h3>');
 		parent::q_view_content($q_view);
 	}

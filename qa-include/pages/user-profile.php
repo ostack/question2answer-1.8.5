@@ -571,7 +571,7 @@ if (!QA_FINAL_EXTERNAL_USERS) {
 
 	// Show IP addresses and times for last login or write - only if we're a moderator or higher
 
-	if ($loginlevel >= QA_USER_LEVEL_MODERATOR && !qa_user_permit_error()) {
+	if ( !qa_user_permit_error()) {
 		$qa_content['form_profile']['fields']['lastlogin'] = array(
 			'type' => 'static',
 			'label' => qa_lang_html('users/last_login_label'),
@@ -580,7 +580,7 @@ if (!QA_FINAL_EXTERNAL_USERS) {
 					'^1' => qa_time_to_string(qa_opt('db_time') - $useraccount['loggedin']),
 					'^2' => qa_ip_anchor_html(@inet_ntop($useraccount['loginip'])),
 				)),
-			'note' => $userediting ? null : qa_lang_html('users/only_shown_moderators'),
+			//'note' => $userediting ? null : qa_lang_html('users/only_shown_moderators'),
 			'id' => 'lastlogin',
 		);
 
@@ -593,7 +593,7 @@ if (!QA_FINAL_EXTERNAL_USERS) {
 						'^1' => qa_time_to_string(qa_opt('db_time') - $useraccount['written']),
 						'^2' => qa_ip_anchor_html(@inet_ntop($useraccount['writeip'])),
 					)),
-				'note' => $userediting ? null : qa_lang_html('users/only_shown_moderators'),
+				//'note' => $userediting ? null : qa_lang_html('users/only_shown_moderators'),
 				'id' => 'lastwrite',
 			);
 		} else {

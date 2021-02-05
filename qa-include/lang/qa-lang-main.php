@@ -90,7 +90,7 @@ return array(
 	'image_not_read' => 'The image could not be read. Please upload one of: ^',
 	'image_too_big_x_pc' => 'This image is too big. Please scale to ^% then try again.',
 	'in_category_x' => 'in ^',
-	'ip_address_x' => 'IP address ^',
+	'ip_address_x' => 'IP address ^ activities',
 	'logged_in_x' => 'Hello ^',
 	'max_length_x' => 'Maximum length is ^ characters',
 	'max_upload_size_x' => 'Maximum upload size is ^',
